@@ -1,4 +1,9 @@
-EDA.ipynb
+*.ipynb
+**/data
+**/outputs
+**/tokenized_data
+
+
 led / optimized / DLL files
 __pycache__/
 *.py[cod]

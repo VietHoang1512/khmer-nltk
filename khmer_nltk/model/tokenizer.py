@@ -55,10 +55,12 @@ class WordTokenizer:
         # print(type(self.crf_model))
 
 if __name__ == "__main__":
-    t = "ចំណែកជើងទី២ នឹងត្រូវធ្វើឡើងឯប្រទេសកាតា៕"
-    t_correct = "ចំណែក ជើង ទី ២ នឹង ត្រូវ ធ្វើឡើង ឯ ប្រទេស កាតា ៕ "
+    t = "ជនសង្ស័យមានឈ្មោះ ទូច ធីតា ហៅ នាង ភេទស្រី អាយុ៣៨ ឆ្នាំបានឆ្លើយសារភាពថា ខ្លួនមិនបាន លួចយកកាបូប ជនរងគ្រោះឡើយ។"
+    t_correct = " ជនសង្ស័យ មាន ឈ្មោះ  ទូច ធីតា ហៅ នាង  ភេទ ស្រី  អាយុ ៣៨ ឆ្នាំ បាន ឆ្លើយ សារភាព ថា  ខ្លួន មិន បាន  លួច យក កាបូប ជនរងគ្រោះ ឡើយ ។"
     tokenizer = WordTokenizer()
     tokenizer.from_pretrained(
-        "/home/leonard/leonard/nlp/khmer_segmentation/outputs/sklearn_crf_model_10k.pkl")
+        "/home/leonard/leonard/nlp/khmer_segmentation/outputs/sklearn_crf_model_10000.pkl")
 
     print(tokenizer.encode(t))
+    print(t_correct)
+    print()
