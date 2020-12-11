@@ -2,8 +2,8 @@
 **/data
 **/outputs
 **/tokenized_data
-
-
+train.py
+test.py
 led / optimized / DLL files
 __pycache__/
 *.py[cod]

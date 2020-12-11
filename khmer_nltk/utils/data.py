@@ -1,5 +1,5 @@
 import re
-from utils.constants import *
+from khmer_nltk.utils.constants import *
 
 
 def correct_text(text: str):

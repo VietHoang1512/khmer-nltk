@@ -1,11 +1,14 @@
-from utils.log_utils import logger
+from khmer_nltk.utils.log_utils import logger
 
-#@title Segment into KCCs 
+# End of sentence signs etc.
+SENTENCE_SEPARATOR = ['◌៓', '។', '៕', '៖', 'ៗ', '៘', '៙', '៚', '៛', 'ៜ', '៝', '?', '!']
 
 # list of constants needed for KCC and feature generation
+
 # consonant and independent vowels
 KHCONST = set(u'កខគឃងចឆជឈញដឋឌឍណតថទធនបផពភមយរលវឝឞសហឡអឣឤឥឦឧឨឩឪឫឬឭឮឯឰឱឲឳ')
 KHVOWEL = set(u'឴឵ាិីឹឺុូួើឿៀេែៃោៅ\u17c6\u17c7\u17c8')
+
 # subscript, diacritics
 KHSUB = set(u'្')
 KHDIAC = set(u"\u17c9\u17ca\u17cb\u17cc\u17cd\u17ce\u17cf\u17d0") #MUUSIKATOAN, TRIISAP, BANTOC,ROBAT,

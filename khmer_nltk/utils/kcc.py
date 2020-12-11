@@ -1,8 +1,8 @@
 from typing import List
 from tqdm import tqdm
 
-from utils.constants import *
-from utils.data import cleanup_str, gen_char_with_label, seg_char
+from khmer_nltk.utils.constants import *
+from khmer_nltk.utils.data import cleanup_str, gen_char_with_label, seg_char
 
 
 def data_generator(sentences: List):

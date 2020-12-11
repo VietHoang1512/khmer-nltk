@@ -4,8 +4,8 @@ import glob
 import pickle
 from tqdm import tqdm
 
-from utils.data import cleanup_str
-from utils.constants import *
+from khmer_nltk.utils.data import cleanup_str
+from khmer_nltk.utils.constants import *
 
 
 def get_data_from_folder(data_dir: str, max_sentences=100000):
