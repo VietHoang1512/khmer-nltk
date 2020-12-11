@@ -3,6 +3,7 @@ import re
 import glob
 import pickle
 from tqdm import tqdm
+import shutil
 
 from khmer_nltk.utils.data import cleanup_str
 from khmer_nltk.utils.constants import *
@@ -46,6 +47,79 @@ def get_data_from_folder(data_dir: str, max_sentences=100000):
     return sentences  # , orig_text
 
 
+def _normalize_token(token):
+    assert token.count("[")==token.count("]"), f"token {token} is not valid"
+    token = token.replace("-", "")
+    assert token[0]==token[-1], f"confused in specify token {token}"
+    return token[0]
+
+def cache_nova_text(tok_fp, tag_fp, output_dir):
+    with open(tag_fp, "r", encoding="utf8") as f:
+        tagged_sentences_text = f.read().strip().split("\n")
+    with open(tok_fp, "r", encoding="utf8") as f:
+        sentences_text = f.read().strip().split("\n")    
+    
+    tagged_sentences = {index:tagged for index, tagged in map(lambda text:text.split("\t"), tagged_sentences_text)}
+    sentences = {index:tagged for index, tagged in map(lambda text:text.split("\t"), sentences_text)}
+    
+    new_tagged_sentences_text = dict()
+    new_sentences_text = dict()
+
+    for sentence_id, sentence in tqdm(tagged_sentences.items(), desc="Processing data"):
+        new_sentence = ""
+        new_tokens = []
+        start_of_token = False
+        for i, token in enumerate(tagged_sentences[sentence_id].split()):
+            if ("[" in token):
+                new_sentence += ("-" + sentences[sentence_id].split()[i])
+    #             token = _normalize_token(token)
+                new_tokens.append(token)   
+                start_of_token = True
+                continue
+
+            if start_of_token:
+                new_sentence += sentences[sentence_id].split()[i] 
+                new_tokens[-1] += "+" + token
+            else:
+                new_sentence += (" " + sentences[sentence_id].split()[i])
+                token = _normalize_token(token)
+                new_tokens.append(token)
+
+            if ("]" in token):
+                start_of_token = False   
+                new_tokens[-1] = _normalize_token(new_tokens[-1])
+                
+        new_sentence = new_sentence.strip("-")
+        new_tagged_sentences_text[sentence_id] = " ".join(new_tokens).strip()
+        new_sentences_text[sentence_id] = new_sentence.strip()
+
+    # new_tagged_sentences_text = OrderedDict(sorted(new_tagged_sentences_text.items()))
+    # new_sentences_text = OrderedDict(sorted(new_sentences_text.items()))    
+    
+    if os.path.exists(output_dir):
+        shutil.rmtree(output_dir)
+    os.makedirs(output_dir)
+    
+    for sentence_id in tqdm(sorted(new_tagged_sentences_text.keys()), f"Saving data to {output_dir}")  :
+        id_ = sentence_id.split(".")
+        doc_id = ".".join(id_[:-1])
+        
+        tok_fp = os.path.join(output_dir, doc_id + "_tok.txt")
+        with open(tok_fp, "a") as f:
+            f.write(sentence_id)
+            f.write("\t")  
+            f.write(new_sentences_text[sentence_id])   
+            f.write("\n")      
+        
+        tag_fp = os.path.join(output_dir, doc_id + "_tag.txt")
+        
+        with open(tag_fp, "a") as f:
+            f.write(sentence_id)
+            f.write("\t")  
+            f.write(new_tagged_sentences_text[sentence_id])   
+            f.write("\n")   
+        
+
 def save_model(model, fn, output_dir="../../outputs/"):
     os.makedirs(output_dir, exist_ok=True)
     fp = os.path.join(output_dir, fn)
@@ -62,5 +136,8 @@ def load_model(fp):
 
 
 if __name__ == "__main__":
-    get_data_from_folder(
-        "/home/leonard/leonard/nlp/khmer_segmentation/data/kh_data_10000")
+    # get_data_from_folder(
+    #     "data/kh_data_10000")
+    cache_nova_text(tok_fp="data/km-nova-181101/data_km.km-tok.nova",
+                    tag_fp="data/km-nova-181101/data_km.km-tag.nova",
+                    output_dir="data/new-km-nova-181101")
