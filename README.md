@@ -7,9 +7,30 @@
 * [ ] Named Entity Recognition
 * [ ] Part of speech Tagging
 
+### Installation
+
+```bash
+>>> pip install python-khmernltk
+```
+
 ##### Word segmentation:
 
+- Usage:
+
+
+```
+>>> from khmernltk import word_tokenize
+>>> word_tokenize("ដោយឡែកសាកសពជនរងគ្រោះទាំង២ ត្រូវបានសមត្ថកិច្ចប្រគល់ទៅឲ្យក្រុមគ្រួសារយកទៅចាត់ចែងធ្វើបុណ្យតាមប្រពៃណីរៀងៗខ្លួន ៕")
+```
+
+
+
+
+.
+
+```
 - Original [repo](https://github.com/phylypo/segmentation-crf-khmer)
+```
 
 ```bash
 Iter 100 time=13.34 loss=14383.13 active=262344 precision=0.998  recall=0.998  F1=0.998  Acc(item/seq)=0.998 0.818  feature_norm=742.32
@@ -28,7 +49,6 @@ Performance on training set: 0.9997525919880873
 Test set num sentences: 14539
 Performance on test set: 0.9976550064522012
 ```
-
 
 - [Asian Language Treebank (ALT)](https://www2.nict.go.jp/astrec-att/member/mutiyama/ALT/)
 
@@ -49,7 +69,6 @@ Performance on training set: 0.9819638316441394
 Test set num sentences: 4022
 Performance on test set: 0.9725380329197301
 ```
-
 
 #### References:
 
