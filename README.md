@@ -1,6 +1,6 @@
-### Khmer natural language processing tookit
+## Khmer natural language processing tookit
 
-#### TODO:
+### TODO:
 
 * [X] Sentence Segmentation
 * [X] Word Segmentation
@@ -13,9 +13,9 @@
 >>> pip install python-khmernltk
 ```
 
-##### Word segmentation:
+### Word segmentation:
 
-- Usage:
+#### Usage:
 
 
 ```
@@ -24,15 +24,9 @@
 ```
 
 
-
-
-.
-
-```
 - Original [repo](https://github.com/phylypo/segmentation-crf-khmer)
-```
 
-```bash
+```abc
 Iter 100 time=13.34 loss=14383.13 active=262344 precision=0.998  recall=0.998  F1=0.998  Acc(item/seq)=0.998 0.818  feature_norm=742.32
 ================================================
   Label    Precision    Recall     F1    Support
@@ -52,7 +46,7 @@ Performance on test set: 0.9976550064522012
 
 - [Asian Language Treebank (ALT)](https://www2.nict.go.jp/astrec-att/member/mutiyama/ALT/)
 
-```bash
+```abc
 Iter 100 time=2.01  loss=83190.08 active=102602 precision=0.970  recall=0.970  F1=0.970  Acc(item/seq)=0.973 0.223  feature_norm=157.96
 ================================================
   Label    Precision    Recall     F1    Support
@@ -70,7 +64,7 @@ Test set num sentences: 4022
 Performance on test set: 0.9725380329197301
 ```
 
-#### References:
+### References:
 
 - [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
 - [Khmer Word Segmentation Using
