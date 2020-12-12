@@ -10,8 +10,8 @@ README = (HERE / "README.md").read_text()
 
 # This call to setup() does all the work
 setup(
-    name="python-khmernltk",
-    version="0.3-alpha",
+    name="khmer-nltk",
+    version="0.1-alpha",
     description="A Khmer language processing tool kit",
     long_description=README,
     long_description_content_type="text/markdown",

@@ -1,7 +1,6 @@
 # experiments
 *.ipynb
 *train*.py
-test.py
 
 # data
 **/data

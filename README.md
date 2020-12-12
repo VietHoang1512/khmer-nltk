@@ -4,7 +4,7 @@
 
 * [X] Sentence Segmentation
 * [X] Word Segmentation
-* [ ] Named Entity Recognition
+* [X] Named Entity Recognition
 * [ ] Part of speech Tagging
 
 ### Installation
@@ -17,16 +17,15 @@
 
 #### Usage:
 
-
+```python
+from khmernltk import word_tokenize
+raw_text = "ជនរងគ្រោះទាំង២នាក់ មានទីលំនៅក្នុង ភូមិព្រែកថ្មី ឃុំព្រែកថ្មី ស្រុកកោះធំ ខេត្តកណ្តាល ។"
+print(word_tokenize(raw_text))
 ```
->>> from khmernltk import word_tokenize
->>> word_tokenize("ដោយឡែកសាកសពជនរងគ្រោះទាំង២ ត្រូវបានសមត្ថកិច្ចប្រគល់ទៅឲ្យក្រុមគ្រួសារយកទៅចាត់ចែងធ្វើបុណ្យតាមប្រពៃណីរៀងៗខ្លួន ៕")
-```
-
 
 - Original [repo](https://github.com/phylypo/segmentation-crf-khmer)
 
-```abc
+```text
 Iter 100 time=13.34 loss=14383.13 active=262344 precision=0.998  recall=0.998  F1=0.998  Acc(item/seq)=0.998 0.818  feature_norm=742.32
 ================================================
   Label    Precision    Recall     F1    Support
@@ -46,7 +45,7 @@ Performance on test set: 0.9976550064522012
 
 - [Asian Language Treebank (ALT)](https://www2.nict.go.jp/astrec-att/member/mutiyama/ALT/)
 
-```abc
+```text
 Iter 100 time=2.01  loss=83190.08 active=102602 precision=0.970  recall=0.970  F1=0.970  Acc(item/seq)=0.973 0.223  feature_norm=157.96
 ================================================
   Label    Precision    Recall     F1    Support
@@ -63,6 +62,42 @@ Performance on training set: 0.9819638316441394
 Test set num sentences: 4022
 Performance on test set: 0.9725380329197301
 ```
+
+### POS Tagging:
+
+#### Usage:
+
+```python
+from khmernltk import pos_tag
+raw_text = "ជនរងគ្រោះទាំង២នាក់ មានទីលំនៅក្នុង ភូមិព្រែកថ្មី ឃុំព្រែកថ្មី ស្រុកកោះធំ ខេត្តកណ្តាល ។"
+print(word_tokenize(raw_text))
+```
+
+- [Asian Language Treebank (ALT)](https://www2.nict.go.jp/astrec-att/member/mutiyama/ALT/)
+
+```text
+Iter 100 time=0.47  loss=27934.73 active=15102 precision=0.825  recall=0.818  F1=0.821  Acc(item/seq)=0.983 0.659  feature_norm=168.99
+================================================
+Label      Precision    Recall     F1    Support
+-------  -----------  --------  -----  ---------
++              0.000     0.000  0.000          2
+.              1.000     0.999  1.000       6481
+1              0.885     0.847  0.866       1149
+a              0.925     0.912  0.919       6064
+n              0.981     0.989  0.985      36481
+o              0.992     0.990  0.991      18230
+v              0.992     0.987  0.990      28905
+------------------------------------------------
+Total seconds required for training: 49.975
+Number of active features: 15102 (216667)
+Number of active attributes: 9760 (158393)
+Number of active labels: 7 (7)
+Train set num sentences: 14914
+Performance on training set: 0.9878960758615373
+Test set num sentences: 3729
+Performance on test set: 0.9830339526471555
+```
+
 
 ### References:
 
