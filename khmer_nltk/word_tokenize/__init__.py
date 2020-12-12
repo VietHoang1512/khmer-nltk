@@ -1,11 +1,12 @@
 import os
 
 from khmer_nltk.utils.constants import *
-from khmer_nltk.utils.kcc import seg_kcc, create_kcc_features
+from khmer_nltk.word_tokenize.kcc import seg_kcc, create_kcc_features
 from khmer_nltk.utils.file_utils import load_model
 
 
 SEPARATOR = "-"
+# sklearn_crf_ner_alt_0.9725.sav / sklearn_crf_ner_10000.sav
 model_path = os.path.join(os.path.dirname(__file__), "sklearn_crf_ner_10000.sav")
 crf_model = load_model(model_path)
 

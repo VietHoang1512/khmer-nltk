@@ -1,6 +1,6 @@
 # experiments
 *.ipynb
-train_word_tokenizer.py
+*train*.py
 test.py
 
 # data

@@ -71,7 +71,7 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
         start_of_token = False
         for i, token in enumerate(tagged_sentences[sentence_id].split()):
             if ("[" in token):
-                new_sentence += ("-" + sentences[sentence_id].split()[i])
+                new_sentence += ("\u200b" + sentences[sentence_id].split()[i])
     #             token = _normalize_token(token)
                 new_tokens.append(token)   
                 start_of_token = True
@@ -81,7 +81,7 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
                 new_sentence += sentences[sentence_id].split()[i] 
                 new_tokens[-1] += "+" + token
             else:
-                new_sentence += (" " + sentences[sentence_id].split()[i])
+                new_sentence += ("\u200b" + sentences[sentence_id].split()[i])
                 token = _normalize_token(token)
                 new_tokens.append(token)
 
@@ -89,33 +89,41 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
                 start_of_token = False   
                 new_tokens[-1] = _normalize_token(new_tokens[-1])
                 
-        new_sentence = new_sentence.strip("-")
+        new_sentence = new_sentence.strip("\u200b")
         new_tagged_sentences_text[sentence_id] = " ".join(new_tokens).strip()
         new_sentences_text[sentence_id] = new_sentence.strip()
 
     # new_tagged_sentences_text = OrderedDict(sorted(new_tagged_sentences_text.items()))
     # new_sentences_text = OrderedDict(sorted(new_sentences_text.items()))    
     
+    # recreate the output directory (cause we're writing in adding mode)
     if os.path.exists(output_dir):
         shutil.rmtree(output_dir)
     os.makedirs(output_dir)
-    
+
     for sentence_id in tqdm(sorted(new_tagged_sentences_text.keys()), f"Saving data to {output_dir}")  :
         id_ = sentence_id.split(".")
         doc_id = ".".join(id_[:-1])
         
-        tok_fp = os.path.join(output_dir, doc_id + "_tok.txt")
+        tok_fp = os.path.join(output_dir, doc_id + "_seg_200b.txt")
         with open(tok_fp, "a") as f:
-            f.write(sentence_id)
-            f.write("\t")  
+            # f.write(sentence_id)
+            # f.write("\t")  
             f.write(new_sentences_text[sentence_id])   
             f.write("\n")      
-        
+
+        orig_fp = os.path.join(output_dir, doc_id + "_orig.txt")
+        with open(orig_fp, "a") as f:
+            # f.write(sentence_id)
+            # f.write("\t")  
+            f.write(new_sentences_text[sentence_id].replace("\u200b", ""))   
+            f.write("\n")      
+
         tag_fp = os.path.join(output_dir, doc_id + "_tag.txt")
         
         with open(tag_fp, "a") as f:
-            f.write(sentence_id)
-            f.write("\t")  
+            # f.write(sentence_id)
+            # f.write("\t")  
             f.write(new_tagged_sentences_text[sentence_id])   
             f.write("\n")   
         
