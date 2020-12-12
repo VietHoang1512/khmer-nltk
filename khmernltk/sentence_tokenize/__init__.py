@@ -1,5 +1,5 @@
 import re
-from khmer_nltk.utils.constants import SENTENCE_SEPARATOR
+from khmernltk.utils.constants import SENTENCE_SEPARATOR
 
 def sentence_tokenize(text:str):
     sentences = re.findall(".*?[" + "".join(SENTENCE_SEPARATOR) + "]+", text)

@@ -1,2 +1,0 @@
-from khmer_nltk.word_tokenize import word_tokenize
-from khmer_nltk.sentence_tokenize import sentence_tokenize

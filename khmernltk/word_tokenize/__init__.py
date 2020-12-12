@@ -1,8 +1,8 @@
 import os
 
-from khmer_nltk.utils.constants import *
-from khmer_nltk.word_tokenize.kcc import seg_kcc, create_kcc_features
-from khmer_nltk.utils.file_utils import load_model
+from khmernltk.utils.constants import *
+from khmernltk.word_tokenize.kcc import seg_kcc, create_kcc_features
+from khmernltk.utils.file_utils import load_model
 
 
 SEPARATOR = "-"

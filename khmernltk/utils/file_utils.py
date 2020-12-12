@@ -5,8 +5,8 @@ import pickle
 from tqdm import tqdm
 import shutil
 
-from khmer_nltk.utils.data import cleanup_str
-from khmer_nltk.utils.constants import *
+from khmernltk.utils.data import cleanup_str
+from khmernltk.utils.constants import *
 
 
 def get_data_from_folder(data_dir: str, max_sentences=100000):
@@ -89,9 +89,10 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
                 start_of_token = False   
                 new_tokens[-1] = _normalize_token(new_tokens[-1])
                 
-        new_sentence = new_sentence.strip("\u200b")
+        new_sentence = new_sentence.strip("\u200b").strip()
         new_tagged_sentences_text[sentence_id] = " ".join(new_tokens).strip()
-        new_sentences_text[sentence_id] = new_sentence.strip()
+        new_sentences_text[sentence_id] = new_sentence
+        assert len(new_tokens)==len(new_sentence.split("\u200b")), f"{sentence_id}"
 
     # new_tagged_sentences_text = OrderedDict(sorted(new_tagged_sentences_text.items()))
     # new_sentences_text = OrderedDict(sorted(new_sentences_text.items()))    

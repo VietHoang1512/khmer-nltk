@@ -1,8 +1,8 @@
 from typing import List
 from tqdm import tqdm
 
-from khmer_nltk.utils.constants import *
-from khmer_nltk.utils.data import cleanup_str, gen_char_with_label, seg_char
+from khmernltk.utils.constants import *
+from khmernltk.utils.data import cleanup_str, gen_char_with_label, seg_char
 
 
 def is_khmer_char(ch: str):

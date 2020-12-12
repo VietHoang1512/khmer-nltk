@@ -1,0 +1,2 @@
+# sklearn-crf models
+include khmer_nltk/*.sav

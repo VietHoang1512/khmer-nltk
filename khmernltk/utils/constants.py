@@ -1,4 +1,4 @@
-from khmer_nltk.utils.log_utils import logger
+from khmernltk.utils.log_utils import logger
 
 # End of sentence signs etc.
 SENTENCE_SEPARATOR = ['◌៓', '។', '៕', '៖', 'ៗ', '៘', '៙', '៚', '៛', 'ៜ', '៝', '?', '!']
