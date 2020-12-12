@@ -1,4 +1,5 @@
 import pathlib
+import setuptools
 from setuptools import setup
 
 # The directory containing this file
@@ -25,8 +26,9 @@ setup(
         "Intended Audience :: Developers",
     ],
     python_requires='>3.5',
-    # packages=packages=setuptools.find_packages(exclude=["data"]),
-    packages = ["khmernltk"],
+    packages=setuptools.find_packages(exclude=["data"]),
+    # packages = ["khmernltk"],
+    package_dir={'khmernltk': 'khmernltk'},
     package_data={
         'khmernltk': ['word_tokenize/sklearn_crf_ner_10000.sav', 'word_tokenize/sklearn_crf_ner_alt_0.9725.sav']
     },
