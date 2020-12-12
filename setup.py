@@ -25,7 +25,11 @@ setup(
         "Intended Audience :: Developers",
     ],
     python_requires='>3.5',
-    packages=packages=setuptools.find_packages(exclude=["data"]),
+    # packages=packages=setuptools.find_packages(exclude=["data"]),
+    packages = ["khmernltk"],
+    package_data={
+        'khmernltk': ['word_tokenize/sklearn_crf_ner_10000.sav', 'word_tokenize/sklearn_crf_ner_alt_0.9725.sav']
+    },
     include_package_data=True,
-    install_requires=["sklearn_crfsuite", "tqdm"],
+    install_requires=["sklearn", "sklearn_crfsuite", "tqdm"],
 )
