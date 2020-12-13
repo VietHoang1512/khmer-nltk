@@ -1,105 +1,55 @@
-## Khmer natural language processing tookit
+## 🏅Khmer natural language processing tookit🏅
 
-### TODO:
+### 💪💪💪 TODO:
 
 * [X] Sentence Segmentation
 * [X] Word Segmentation
-* [X] Named Entity Recognition
-* [ ] Part of speech Tagging
+* [ ] Named Entity Recognition
+* [X] Part of speech Tagging
+* [ ] Text classification
 
-### Installation
+### 🎯🎯🎯 Installation
 
 ```bash
->>> pip install python-khmernltk
+$ pip install python-khmernltk
+
 ```
 
-### Word segmentation:
+### 🏹🏹🏹 Quick tour:
+
+#### Sentence tokenization:
+
+```python
+>>> from khmernltk import sentence_tokenize
+>>> raw_text = "ខួបឆ្នាំទី២៨! ២៣ តុលា ស្មារតីផ្សះផ្សាជាតិរវាងខ្មែរនិងខ្មែរ ឈានទៅបញ្ចប់សង្រ្គាម នាំពន្លឺសន្តិភាព និងការរួបរួមជាថ្មី"
+>>> print(sentence_tokenize(raw_text))
+['ខួបឆ្នាំទី២៨!', '២៣ តុលា ស្មារតីផ្សះផ្សាជាតិរវាងខ្មែរនិងខ្មែរ ឈានទៅបញ្ចប់សង្រ្គាម នាំពន្លឺសន្តិភាព និងការរួបរួមជាថ្មី']
+```
+
+
+#### [Word tokenization](https://github.com/VietHoang1710/khmer-nltk/tree/main/khmernltk/word_tokenize/README.md):
+
+```python
+>>> from khmernltk import word_tokenize
+>>> raw_text = "ខួបឆ្នាំទី២៨! ២៣ តុលា ស្មារតីផ្សះផ្សាជាតិរវាងខ្មែរនិងខ្មែរ ឈានទៅបញ្ចប់សង្រ្គាម នាំពន្លឺសន្តិភាព និងការរួបរួមជាថ្មី"
+>>> print(word_tokenize(raw_text, return_tokens=True))
+['ខួប', 'ឆ្នាំ', 'ទី', '២៨', '!', ' ', '២៣', ' ', 'តុលា', ' ', 'ស្មារតី', 'ផ្សះផ្សា', 'ជាតិ', 'រវាង', 'ខ្មែរ', 'និង', 'ខ្មែរ', ' ', 'ឈាន', 'ទៅ', 'បញ្ចប់', 'សង្រ្គាម', ' ', 'នាំ', 'ពន្លឺ', 'សន្តិភាព', ' ', 'និង', 'ការរួបរួម', 'ជាថ្មី']
+```
+
+
+#### [POS Tagging](https://github.com/VietHoang1710/khmer-nltk/tree/main/khmernltk/pos_tag/README.md):
 
 #### Usage:
 
 ```python
-from khmernltk import word_tokenize
-raw_text = "ជនរងគ្រោះទាំង២នាក់ មានទីលំនៅក្នុង ភូមិព្រែកថ្មី ឃុំព្រែកថ្មី ស្រុកកោះធំ ខេត្តកណ្តាល ។"
-print(word_tokenize(raw_text))
-```
-
-- Original [repo](https://github.com/phylypo/segmentation-crf-khmer)
-
-```text
-Iter 100 time=13.34 loss=14383.13 active=262344 precision=0.998  recall=0.998  F1=0.998  Acc(item/seq)=0.998 0.818  feature_norm=742.32
-================================================
-  Label    Precision    Recall     F1    Support
--------  -----------  --------  -----  ---------
-      0        0.998     0.998  0.998     791456
-      1        0.998     0.998  0.998     721981
-------------------------------------------------
-Total seconds required for training: 1355.816
-Number of active features: 262344 (5466873)
-Number of active attributes: 180020 (5710703)
-Number of active labels: 2 (2)
-Train set num sentences: 58153
-Performance on training set: 0.9997525919880873
-Test set num sentences: 14539
-Performance on test set: 0.9976550064522012
-```
-
-- [Asian Language Treebank (ALT)](https://www2.nict.go.jp/astrec-att/member/mutiyama/ALT/)
-
-```text
-Iter 100 time=2.01  loss=83190.08 active=102602 precision=0.970  recall=0.970  F1=0.970  Acc(item/seq)=0.973 0.223  feature_norm=157.96
-================================================
-  Label    Precision    Recall     F1    Support
--------  -----------  --------  -----  ---------
-      0        0.979     0.978  0.978     183201
-      1        0.962     0.963  0.963     105562
-------------------------------------------------
-Total seconds required for training: 221.182
-Number of active features: 102602 (2501777)
-Number of active attributes: 64735 (2676196)
-Number of active labels: 2 (2)
-Train set num sentences: 16084
-Performance on training set: 0.9819638316441394
-Test set num sentences: 4022
-Performance on test set: 0.9725380329197301
-```
-
-### POS Tagging:
-
-#### Usage:
-
-```python
-from khmernltk import pos_tag
-raw_text = "ជនរងគ្រោះទាំង២នាក់ មានទីលំនៅក្នុង ភូមិព្រែកថ្មី ឃុំព្រែកថ្មី ស្រុកកោះធំ ខេត្តកណ្តាល ។"
-print(word_tokenize(raw_text))
-```
-
-- [Asian Language Treebank (ALT)](https://www2.nict.go.jp/astrec-att/member/mutiyama/ALT/)
-
-```text
-Iter 100 time=0.47  loss=27934.73 active=15102 precision=0.825  recall=0.818  F1=0.821  Acc(item/seq)=0.983 0.659  feature_norm=168.99
-================================================
-Label      Precision    Recall     F1    Support
--------  -----------  --------  -----  ---------
-+              0.000     0.000  0.000          2
-.              1.000     0.999  1.000       6481
-1              0.885     0.847  0.866       1149
-a              0.925     0.912  0.919       6064
-n              0.981     0.989  0.985      36481
-o              0.992     0.990  0.991      18230
-v              0.992     0.987  0.990      28905
-------------------------------------------------
-Total seconds required for training: 49.975
-Number of active features: 15102 (216667)
-Number of active attributes: 9760 (158393)
-Number of active labels: 7 (7)
-Train set num sentences: 14914
-Performance on training set: 0.9878960758615373
-Test set num sentences: 3729
-Performance on test set: 0.9830339526471555
+>>> from khmernltk import pos_tag
+>>> raw_text = "ខួបឆ្នាំទី២៨! ២៣ តុលា ស្មារតីផ្សះផ្សាជាតិរវាងខ្មែរនិងខ្មែរ ឈានទៅបញ្ចប់សង្រ្គាម នាំពន្លឺសន្តិភាព និងការរួបរួមជាថ្មី"
+>>> print(pos_tag(raw_text))
+[('ខួប', 'n'), ('ឆ្នាំ', 'n'), ('ទី', 'n'), ('២៨', '1'), ('!', '.'), (' ', 'n'), ('២៣', '1'), (' ', 'n'), ('តុលា', 'n'), (' ', 'n'), ('ស្មារតី', 'n'), ('ផ្សះផ្សា', 'n'), ('ជាតិ', 'n'), ('រវាង', 'o'), ('ខ្មែរ', 'n'), ('និង', 'o'), ('ខ្មែរ', 'n'), (' ', 'n'), ('ឈាន', 'v'), ('ទៅ', 'v'), ('បញ្ចប់', 'v'), ('សង្រ្គាម', 'n'), (' ', 'n'), ('នាំ', 'v'), ('ពន្លឺ', 'n'), ('សន្តិភាព', 'n'), (' ', 'n'), ('និង', 'o'), ('ការរួបរួម', 'n'), ('ជាថ្មី', 'o')]
 ```
 
 
-### References:
+### 👨‍🎓👨‍🎓👨‍🎓 References:
 
 - [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
 - [Khmer Word Segmentation Using

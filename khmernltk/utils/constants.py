@@ -1,7 +1,6 @@
 from khmernltk.utils.log_utils import logger
 
-# End of sentence signs etc.
-SENTENCE_SEPARATOR = ['◌៓', '។', '៕', '៖', 'ៗ', '៘', '៙', '៚', '៛', 'ៜ', '៝', '?', '!']
+SEPARATOR = "\u200b"
 
 # list of constants needed for KCC and feature generation
 

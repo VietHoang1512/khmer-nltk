@@ -42,4 +42,4 @@ if __name__ == "__main__":
     text = "កប់! មួយជាតិការម្ដង Bitoey លេងឈុតស៊ិចស៊ីឡើងរាំជាមួយស្វាមីមុខភ្ញៀវជាច្រើន!(មានវីដេអូ)"
     correct = "​កប់​! ​មួយ​ជាតិ​ការ​ម្ដង​ Bitoey ​លេង​ឈុត​ស៊ិចស៊ី​ឡើង​រាំ​ជាមួយ​ស្វាមី​មុខ​ភ្ញៀវ​ជាច្រើន​!​(​មាន​វីដេអូ​)"
     print(word_tokenize(text))
-    print(correct.replace("\u200b", separator))
+    print(correct.replace(SEPARATOR, separator))

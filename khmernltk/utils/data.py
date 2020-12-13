@@ -7,7 +7,7 @@ def correct_text(text: str):
     return text
 
 def cleanup_str(text: str):
-    text = text.strip('\u200b').strip()
+    text = text.strip(SEPARATOR).strip()
     text = text.replace("  ", " ")  # clean up 2 spaces to 1
     text = text.replace(" ", "\u200b \u200b")   # ensure 200b around space
     # clean up
@@ -57,7 +57,7 @@ def seg_kcc(str_sentence: str):
     sentence = str_sentence
     # for phr in str_sentence.split(): #no longer split by space, use 200b
     #    logger.warning("phr: '", phr,"'")
-    for word in sentence.split('\u200b'):
+    for word in sentence.split(SEPARATOR):
         #logger.warning("PHR:[%s] len:%d" %(phr, len(phr)))
         for i, c in enumerate(word):
             #logger.warning(i," c:", c)

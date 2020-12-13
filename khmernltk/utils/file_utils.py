@@ -71,7 +71,7 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
         start_of_token = False
         for i, token in enumerate(tagged_sentences[sentence_id].split()):
             if ("[" in token):
-                new_sentence += ("\u200b" + sentences[sentence_id].split()[i])
+                new_sentence += (SEPARATOR + sentences[sentence_id].split()[i])
     #             token = _normalize_token(token)
                 new_tokens.append(token)   
                 start_of_token = True
@@ -81,7 +81,7 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
                 new_sentence += sentences[sentence_id].split()[i] 
                 new_tokens[-1] += "+" + token
             else:
-                new_sentence += ("\u200b" + sentences[sentence_id].split()[i])
+                new_sentence += (SEPARATOR + sentences[sentence_id].split()[i])
                 token = _normalize_token(token)
                 new_tokens.append(token)
 
@@ -89,10 +89,10 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
                 start_of_token = False   
                 new_tokens[-1] = _normalize_token(new_tokens[-1])
                 
-        new_sentence = new_sentence.strip("\u200b").strip()
+        new_sentence = new_sentence.strip(SEPARATOR).strip()
         new_tagged_sentences_text[sentence_id] = " ".join(new_tokens).strip()
         new_sentences_text[sentence_id] = new_sentence
-        assert len(new_tokens)==len(new_sentence.split("\u200b")), f"{sentence_id}"
+        assert len(new_tokens)==len(new_sentence.split(SEPARATOR)), f"{sentence_id}"
 
     # new_tagged_sentences_text = OrderedDict(sorted(new_tagged_sentences_text.items()))
     # new_sentences_text = OrderedDict(sorted(new_sentences_text.items()))    
@@ -117,7 +117,7 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
         with open(orig_fp, "a") as f:
             # f.write(sentence_id)
             # f.write("\t")  
-            f.write(new_sentences_text[sentence_id].replace("\u200b", ""))   
+            f.write(new_sentences_text[sentence_id].replace(SEPARATOR, ""))   
             f.write("\n")      
 
         tag_fp = os.path.join(output_dir, doc_id + "_tag.txt")
