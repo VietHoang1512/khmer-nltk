@@ -58,7 +58,6 @@ $ pip install python-khmernltk
 }
 ```
 
-
 ### 👨‍🎓👨‍🎓👨‍🎓 References:
 
 - [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
