@@ -1,6 +1,6 @@
 ## 🏅Khmer natural language processing toolkit🏅
 
-### 💪💪💪 TODO:
+### 💪 TODO:
 
 * [X] Sentence Segmentation
 * [X] Word Segmentation
@@ -11,7 +11,7 @@
 ### 🎯🎯🎯 Installation
 
 ```bash
-$ pip install python-khmernltk
+$ pip install khmer-nltk
 ```
 
 ### 🏹🏹🏹 Quick tour:

@@ -1,6 +1,3 @@
-from typing import List
-from tqdm import tqdm
-
 from khmernltk.utils.constants import *
 from khmernltk.utils.data import *
 

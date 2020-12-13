@@ -1,5 +1,4 @@
 import argparse
-import os
 from tqdm import tqdm
 
 from khmernltk import word_tokenize

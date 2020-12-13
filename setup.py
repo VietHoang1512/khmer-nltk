@@ -1,6 +1,5 @@
 import pathlib
 import setuptools
-from setuptools import setup
 
 # The directory containing this file
 HERE = pathlib.Path(__file__).parent
@@ -9,9 +8,9 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 # This call to setup() does all the work
-setup(
+setuptools.setup(
     name="khmer-nltk",
-    version="0.1-alpha",
+    version="1.1",
     description="A Khmer language processing toolkit",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -19,19 +18,22 @@ setup(
     author="Phan Viet Hoang",
     author_email="phanviethoang1512@gmail.com",
     license="Apache License 2.0",
-    classifiers=[   
-        "License :: OSI Approved :: Apache License 2.0",
+    classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
         "Intended Audience :: Developers",
         "Natural Language :: English",
     ],
     python_requires='>3.5',
-    packages=setuptools.find_packages(exclude=["data", "bin", "samples", "scripts"]),
+    packages=setuptools.find_packages(
+        exclude=["data", "bin", "samples", "scripts"]),
     package_dir={'khmernltk': 'khmernltk'},
     package_data={
-        'khmernltk': ['word_tokenize/sklearn_crf_ner_10000.sav', 'word_tokenize/sklearn_crf_ner_alt_0.9725.sav']
+        'khmernltk': ['pos_tag/sklearn_crf_pos_alt_0.9849.sav',
+                      'word_tokenize/sklearn_crf_ner_10000.sav',
+                      #   'word_tokenize/sklearn_crf_ner_alt_0.9725.sav'
+                      ]
     },
     include_package_data=True,
-    install_requires=["sklearn", "sklearn_crfsuite", "tqdm"],
+    install_requires=["sklearn", "sklearn-crfsuite", "tqdm"],
 )
