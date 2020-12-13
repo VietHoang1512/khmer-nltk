@@ -10,9 +10,10 @@ KHVOWEL = set(u'឴឵ាិីឹឺុូួើឿៀេែៃោៅ\u17c6\u17
 
 # subscript, diacritics
 KHSUB = set(u'្')
-KHDIAC = set(u"\u17c9\u17ca\u17cb\u17cc\u17cd\u17ce\u17cf\u17d0") #MUUSIKATOAN, TRIISAP, BANTOC,ROBAT,
-KHSYM = set('៕។៛ៗ៚៙៘,.? ') # add space
-KHNUMBER = set(u'០១២៣៤៥៦៧៨៩0123456789') # remove 0123456789
+# MUUSIKATOAN, TRIISAP, BANTOC,ROBAT,
+KHDIAC = set(u"\u17c9\u17ca\u17cb\u17cc\u17cd\u17ce\u17cf\u17d0")
+KHSYM = set('៕។៛ៗ៚៙៘,.? ')  # add space
+KHNUMBER = set(u'០១២៣៤៥៦៧៨៩0123456789')  # remove 0123456789
 # lunar date:  U+19E0 to U+19FF ᧠...᧿
 KHLUNAR = set('᧠᧡᧢᧣᧤᧥᧦᧧᧨᧩᧪᧫᧬᧭᧮᧯᧰᧱᧲᧳᧴᧵᧶᧷᧸᧹᧺᧻᧼᧽᧾᧿')
 

@@ -12,7 +12,19 @@ model_path = os.path.join(os.path.dirname(
 crf_model = load_model(model_path)
 
 
-def word_tokenize(text: str, separator="-", return_tokens=False):
+def word_tokenize(text: str, separator: str = "-", return_tokens: bool = False):
+    """
+    Khmer language word tokenization
+    ================================
+    :param text: (str) Raw text
+    :param separator: (str) Token-separator in case return_tokens=True
+    :param return_tokens: (bool) Whether return a tokenized text or a list of tokens
+    ================================
+    if return_tokens is True
+    :return: (list) Tokens
+    or else
+    :return: (str) Tokenized text, separated by the separator
+    """
     text = cleanup_str(text)
     skcc = seg_kcc(text)
 

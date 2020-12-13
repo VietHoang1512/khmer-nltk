@@ -102,6 +102,6 @@ def kcc_to_features(kccs, i):
 
     return features
 
+
 def create_kcc_features(kccs):
     return [kcc_to_features(kccs, i) for i in range(len(kccs))]
-

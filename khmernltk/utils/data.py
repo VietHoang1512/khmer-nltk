@@ -7,6 +7,7 @@ def correct_text(text: str):
         text = text.replace(token, normalized_token)
     return text
 
+
 def cleanup_str(text: str):
     text = text.strip(SEPARATOR).strip()
     text = text.replace("  ", " ")  # clean up 2 spaces to 1
@@ -21,6 +22,7 @@ def cleanup_str(text: str):
     text = text.replace(u"\u200a", "")  # hair space
     text = text.strip().replace('\n', '').replace('  ', ' ')
     return text
+
 
 def post_process(text, separator):
     text = text.strip(separator)
@@ -51,6 +53,7 @@ def is_start_of_kcc(ch: str):
     return True
 
 # kcc base - must surround space with \u200b using cleanupstr()
+
 
 def seg_kcc(str_sentence: str):
     segs = []

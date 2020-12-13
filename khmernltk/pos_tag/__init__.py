@@ -1,4 +1,3 @@
-
 import os
 
 from khmernltk.utils.constants import *
@@ -7,14 +6,21 @@ from khmernltk.pos_tag.features import create_word_features
 from khmernltk.utils.file_utils import load_model
 from khmernltk import word_tokenize
 
-# sklearn_crf_pos_alt_0.9830.sav
+# sklearn_crf_pos_alt_0.9849.sav
 model_path = os.path.join(os.path.dirname(
-    __file__), "sklearn_crf_pos_alt_0.9830.sav")
+    __file__), "sklearn_crf_pos_alt_0.9849.sav")
 crf_model = load_model(model_path)
 
 
 def pos_tag(text: str):
-    # text = cleanup_str(text)
+    """
+    Khmer language Part of speech tagging
+    =====================================
+    :param text: (str) Raw text
+    =====================================
+    :return: (list) List of tuple (token, pos tag)
+    """
+    text = cleanup_str(text)
     tokens = word_tokenize(text, return_tokens=True)
     features = create_word_features(tokens)
     pred = crf_model.predict([features])[0]

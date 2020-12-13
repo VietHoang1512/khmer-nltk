@@ -11,7 +11,7 @@ print(sentence_tokenize(text))
 # test word tokenizer
 sep = "_"
 print("word-level tokenized text")
-print(word_tokenize(text, separator = sep, return_tokens=True))
+print(word_tokenize(text, separator=sep, return_tokens=True))
 print("correct text")
 print(correct.strip("\u200b").replace("\u200b", sep))
 
