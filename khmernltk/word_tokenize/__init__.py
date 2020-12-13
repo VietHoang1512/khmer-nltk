@@ -13,7 +13,7 @@ crf_model = load_model(model_path)
 
 
 def word_tokenize(text: str, separator="-", return_tokens=False):
-    # text = cleanup_str(text)
+    text = cleanup_str(text)
     skcc = seg_kcc(text)
 
     features = create_kcc_features(skcc)

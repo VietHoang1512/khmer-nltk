@@ -1,6 +1,7 @@
 import re
 from khmernltk.utils.constants import *
 
+
 def correct_text(text: str):
     for token, normalized_token in mistokenized_dict.items():
         text = text.replace(token, normalized_token)
