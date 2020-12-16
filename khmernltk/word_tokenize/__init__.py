@@ -12,7 +12,7 @@ model_path = os.path.join(os.path.dirname(
 crf_model = load_model(model_path)
 
 
-def word_tokenize(text: str, separator: str = "-", return_tokens: bool = False):
+def word_tokenize(text: str, separator: str = "-", return_tokens: bool = True):
     """
     Khmer language word tokenization
     ================================
