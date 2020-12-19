@@ -10,7 +10,7 @@ from khmernltk.utils.constants import *
 
 
 def get_data_from_folder(data_dir: str, max_sentences=100000):
-    path = data_dir + '/*_seg_200b.txt'  # earlier format: *_seg.txt
+    path = data_dir + "/*_seg_200b.txt"  # earlier format: *_seg.txt
     files = glob.glob(path)
 
     # global variables that use through out
@@ -20,9 +20,9 @@ def get_data_from_folder(data_dir: str, max_sentences=100000):
     # unique id of the article that can be matched to docId in meta.txt
     doc_ids = []
     for file in tqdm(files, desc=f"Getting data from {data_dir}", leave=True):
-        filenum = re.search(r'\d+_', file).group(0)
+        filenum = re.search(r"\d+_", file).group(0)
         doc_ids.append(filenum.replace("_", ""))
-        f = open(file, 'r')
+        f = open(file, "r")
         lines = f.readlines()
         f.close()
 
@@ -32,7 +32,7 @@ def get_data_from_folder(data_dir: str, max_sentences=100000):
             break
 
         # read orig text -- comment out (10K docs which do not have orig text)
-        f = open(file.replace('_seg_200b.txt', '_orig.txt'), 'r')
+        f = open(file.replace("_seg_200b.txt", "_orig.txt"), "r")
         lines = f.readlines()
         f.close()
         orig_text.append(lines)
@@ -60,10 +60,14 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
     with open(tok_fp, "r", encoding="utf8") as f:
         sentences_text = f.read().strip().split("\n")
 
-    tagged_sentences = {index: tagged for index, tagged in map(
-        lambda text: text.split("\t"), tagged_sentences_text)}
-    sentences = {index: tagged for index, tagged in map(
-        lambda text: text.split("\t"), sentences_text)}
+    tagged_sentences = {
+        index: tagged
+        for index, tagged in map(lambda text: text.split("\t"), tagged_sentences_text)
+    }
+    sentences = {
+        index: tagged
+        for index, tagged in map(lambda text: text.split("\t"), sentences_text)
+    }
 
     new_tagged_sentences_text = dict()
     new_sentences_text = dict()
@@ -73,9 +77,9 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
         new_tokens = []
         start_of_token = False
         for i, token in enumerate(tagged_sentences[sentence_id].split()):
-            if ("[" in token):
-                new_sentence += (SEPARATOR + sentences[sentence_id].split()[i])
-    #             token = _normalize_token(token)
+            if "[" in token:
+                new_sentence += SEPARATOR + sentences[sentence_id].split()[i]
+                #             token = _normalize_token(token)
                 new_tokens.append(token)
                 start_of_token = True
                 continue
@@ -84,19 +88,18 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
                 new_sentence += sentences[sentence_id].split()[i]
                 new_tokens[-1] += "+" + token
             else:
-                new_sentence += (SEPARATOR + sentences[sentence_id].split()[i])
+                new_sentence += SEPARATOR + sentences[sentence_id].split()[i]
                 token = _normalize_token(token)
                 new_tokens.append(token)
 
-            if ("]" in token):
+            if "]" in token:
                 start_of_token = False
                 new_tokens[-1] = _normalize_token(new_tokens[-1])
 
         new_sentence = new_sentence.strip(SEPARATOR).strip()
         new_tagged_sentences_text[sentence_id] = " ".join(new_tokens).strip()
         new_sentences_text[sentence_id] = new_sentence
-        assert len(new_tokens) == len(
-            new_sentence.split(SEPARATOR)), f"{sentence_id}"
+        assert len(new_tokens) == len(new_sentence.split(SEPARATOR)), f"{sentence_id}"
 
     # new_tagged_sentences_text = OrderedDict(sorted(new_tagged_sentences_text.items()))
     # new_sentences_text = OrderedDict(sorted(new_sentences_text.items()))
@@ -106,7 +109,9 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
         shutil.rmtree(output_dir)
     os.makedirs(output_dir)
 
-    for sentence_id in tqdm(sorted(new_tagged_sentences_text.keys()), f"Saving data to {output_dir}"):
+    for sentence_id in tqdm(
+        sorted(new_tagged_sentences_text.keys()), f"Saving data to {output_dir}"
+    ):
         id_ = sentence_id.split(".")
         doc_id = ".".join(id_[:-1])
 
@@ -151,6 +156,8 @@ def load_model(fp):
 if __name__ == "__main__":
     # get_data_from_folder(
     #     "data/kh_data_10000")
-    cache_nova_text(tok_fp="data/km-nova-181101/data_km.km-tok.nova",
-                    tag_fp="data/km-nova-181101/data_km.km-tag.nova",
-                    output_dir="data/new-km-nova-181101")
+    cache_nova_text(
+        tok_fp="data/km-nova-181101/data_km.km-tok.nova",
+        tag_fp="data/km-nova-181101/data_km.km-tag.nova",
+        output_dir="data/new-km-nova-181101",
+    )

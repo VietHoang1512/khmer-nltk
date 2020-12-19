@@ -11,16 +11,16 @@ def correct_text(text: str):
 def cleanup_str(text: str):
     text = text.strip(SEPARATOR).strip()
     text = text.replace("  ", " ")  # clean up 2 spaces to 1
-    text = text.replace(" ", "\u200b \u200b")   # ensure 200b around space
+    text = text.replace(" ", "\u200b \u200b")  # ensure 200b around space
     # clean up
-    text = text.replace("\u200b\u200b", '\u200b')   # clean up dupe 200b
-    text = text.replace("\u200b\u200b", '\u200b')   # in case multiple
+    text = text.replace("\u200b\u200b", "\u200b")  # clean up dupe 200b
+    text = text.replace("\u200b\u200b", "\u200b")  # in case multiple
     text = correct_text(text)  # assume space has 200b wrapped around
 
     # remove special characters
-    text = text.replace(u"\u2028", "")  # line separator
-    text = text.replace(u"\u200a", "")  # hair space
-    text = text.strip().replace('\n', '').replace('  ', ' ')
+    text = text.replace("\u2028", "")  # line separator
+    text = text.replace("\u200a", "")  # hair space
+    text = text.strip().replace("\n", "").replace("  ", " ")
     return text
 
 
@@ -30,7 +30,7 @@ def post_process(text, separator):
 
 
 def is_khmer_char(ch: str):
-    if (ch >= '\u1780') and (ch <= '\u17ff'):
+    if (ch >= "\u1780") and (ch <= "\u17ff"):
         return True
     if ch in KHSYM:
         return True
@@ -52,6 +52,7 @@ def is_start_of_kcc(ch: str):
         return False
     return True
 
+
 # kcc base - must surround space with \u200b using cleanupstr()
 
 
@@ -62,14 +63,19 @@ def seg_kcc(str_sentence: str):
     # for phr in str_sentence.split(): #no longer split by space, use 200b
     #    logger.warning("phr: '", phr,"'")
     for word in sentence.split(SEPARATOR):
-        #logger.warning("PHR:[%s] len:%d" %(phr, len(phr)))
+        # logger.warning("PHR:[%s] len:%d" %(phr, len(phr)))
         for i, c in enumerate(word):
-            #logger.warning(i," c:", c)
+            # logger.warning(i," c:", c)
             cur += c
-            nextchar = word[i+1] if (i+1 < len(word)) else ""
+            nextchar = word[i + 1] if (i + 1 < len(word)) else ""
 
             # cluster non-khmer chars together
-            if not is_khmer_char(c) and nextchar != " " and nextchar != "" and not is_khmer_char(nextchar):
+            if (
+                not is_khmer_char(c)
+                and nextchar != " "
+                and nextchar != ""
+                and not is_khmer_char(nextchar)
+            ):
                 continue
             # cluster number together
             if c in KHNUMBER and nextchar in KHNUMBER:
@@ -84,5 +90,5 @@ def seg_kcc(str_sentence: str):
                 segs.append(cur)
                 cur = ""
         # add space back after split
-        #segs.append(" ")
+        # segs.append(" ")
     return segs  # [:-1] # trim last space

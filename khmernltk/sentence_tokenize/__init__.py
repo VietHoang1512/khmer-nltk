@@ -10,8 +10,7 @@ def sentence_tokenize(text: str):
     ====================================
     :return: (list) List of sentences
     """
-    sentences = re.split(
-        r"(?<=[" + "".join(SENTENCE_SEPARATOR) + "])\s*", text)
+    sentences = re.split(r"(?<=[" + "".join(SENTENCE_SEPARATOR) + "])\s*", text)
     return sentences
 
 

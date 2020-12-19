@@ -7,8 +7,7 @@ from khmernltk.utils.file_utils import load_model
 
 
 # sklearn_crf_ner_alt_0.9725.sav / sklearn_crf_ner_10000.sav
-model_path = os.path.join(os.path.dirname(
-    __file__), "sklearn_crf_ner_10000.sav")
+model_path = os.path.join(os.path.dirname(__file__), "sklearn_crf_ner_10000.sav")
 crf_model = load_model(model_path)
 
 
@@ -33,7 +32,7 @@ def word_tokenize(text: str, separator: str = "-", return_tokens: bool = True):
 
     tkcc = []
     for k in features:
-        tkcc.append(k['kcc'])
+        tkcc.append(k["kcc"])
     complete = ""
     tokens = []
     for i, p in enumerate(pred[0]):
@@ -45,7 +44,7 @@ def word_tokenize(text: str, separator: str = "-", return_tokens: bool = True):
         return tokens
 
     complete = separator.join(tokens)
-    complete = complete.replace(separator+" "+separator, " ")
+    complete = complete.replace(separator + " " + separator, " ")
 
     return complete
 

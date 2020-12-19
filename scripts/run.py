@@ -8,22 +8,30 @@ funtionalities = ["sentence_tokenize", "word_tokenize", "pos_tagging"]
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument("-i", "--input_file", type=str,
-                    # default="samples/input.txt",
-                    help='path to the non-tokenized input text file')
+parser.add_argument(
+    "-i",
+    "--input_file",
+    type=str,
+    # default="samples/input.txt",
+    help="path to the non-tokenized input text file",
+)
 
-parser.add_argument("-o", "--output_file", type=str,
-                    # default="samples/output.txt",
-                    help='path to the expected tokenized output file')
+parser.add_argument(
+    "-o",
+    "--output_file",
+    type=str,
+    # default="samples/output.txt",
+    help="path to the expected tokenized output file",
+)
 
-parser.add_argument("-f", "--function", type=str,
-                    help="Select functionality in list {funtionalities} ")
+parser.add_argument(
+    "-f", "--function", type=str, help="Select functionality in list {funtionalities} "
+)
 
 
 args = parser.parse_args()
 
 if __name__ == "__main__":
-
 
     with open(args.input_file, "r") as f:
         sentences = f.read().strip().split("\n")
@@ -37,7 +45,8 @@ if __name__ == "__main__":
         function = pos_tag
     else:
         raise Exception(
-            f"Not Implemented Error. Function can only be in {funtionalities}.")
+            f"Not Implemented Error. Function can only be in {funtionalities}."
+        )
 
     total = len(sentences)
     outputs = []

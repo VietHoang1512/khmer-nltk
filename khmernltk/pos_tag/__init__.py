@@ -7,8 +7,7 @@ from khmernltk.utils.file_utils import load_model
 from khmernltk import word_tokenize
 
 # sklearn_crf_pos_alt_0.9849.sav
-model_path = os.path.join(os.path.dirname(
-    __file__), "sklearn_crf_pos_alt_0.9849.sav")
+model_path = os.path.join(os.path.dirname(__file__), "sklearn_crf_pos_alt_0.9849.sav")
 crf_model = load_model(model_path)
 
 
