@@ -2,7 +2,7 @@
 
 [![code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-![release](https://img.shields.io/pypi/v/khmer-nltk.svg)
+![[release](https://img.shields.io/pypi/v/khmer-nltk.svg)](https://pypi.org/project/khmer-nltk/)
 ![versions](https://img.shields.io/pypi/pyversions/khmer-nltk.svg)
 [![fownloads](https://pepy.tech/badge/khmer-nltk)](https://pepy.tech/project/khmer-nltk)
 [![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/VietHoang1710/khmer-nltk/blob/main/LICENSE)

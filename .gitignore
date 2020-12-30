@@ -7,7 +7,16 @@
 **/outputs
 **/tokenized_data
 
-led / optimized / DLL files
+# stuff
+.flake8
+.isort.cfg
+.pre-commit-config.yaml
+pyproject.toml
+MANIFEST.in
+
+
+
+# led / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
