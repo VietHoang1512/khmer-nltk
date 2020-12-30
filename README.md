@@ -1,17 +1,19 @@
 ## 🏅Khmer natural language processing toolkit🏅
 
-![pypi](https://img.shields.io/pypi/v/khmer-nltk.svg)
+[![code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+![release](https://img.shields.io/pypi/v/khmer-nltk.svg)
 ![versions](https://img.shields.io/pypi/pyversions/khmer-nltk.svg)
-[![Downloads](https://pepy.tech/badge/khmer-nltk)](https://pepy.tech/project/khmer-nltk)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/VietHoang1710/khmer-nltk/blob/main/LICENSE)
+[![fownloads](https://pepy.tech/badge/khmer-nltk)](https://pepy.tech/project/khmer-nltk)
+[![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/VietHoang1710/khmer-nltk/blob/main/LICENSE)
 
 ### 🎯TODO
 
-- [X] Sentence Segmentation
-- [X] Word Segmentation
-- [ ] Named Entity Recognition
-- [X] Part of speech Tagging
-- [ ] Text classification
+-   [X] Sentence Segmentation
+-   [X] Word Segmentation
+-   [ ] Named Entity Recognition
+-   [X] Part of speech Tagging
+-   [ ] Text classification
 
 ### 💪Installation
 
@@ -67,5 +69,5 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 
 ### 👨‍🎓 References
 
-* [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
-* [Khmer Word Segmentation Using Conditional Random Fields](https://www2.nict.go.jp/astrec-att/member/ding/KhNLP2015-SEG.pdf)
+-   [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
+-   [Khmer Word Segmentation Using Conditional Random Fields](https://www2.nict.go.jp/astrec-att/member/ding/KhNLP2015-SEG.pdf)
