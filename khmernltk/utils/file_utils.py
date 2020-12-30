@@ -1,12 +1,14 @@
-import os
-import re
 import glob
+import os
 import pickle
-from tqdm import tqdm
+import re
 import shutil
 
-from khmernltk.utils.data import cleanup_str
+from tqdm import tqdm
+
 from khmernltk.utils.constants import *
+from khmernltk.utils.data import cleanup_str
+from khmernltk.utils.log_utils import logger
 
 
 def get_data_from_folder(data_dir: str, max_sentences=100000):
@@ -60,14 +62,8 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
     with open(tok_fp, "r", encoding="utf8") as f:
         sentences_text = f.read().strip().split("\n")
 
-    tagged_sentences = {
-        index: tagged
-        for index, tagged in map(lambda text: text.split("\t"), tagged_sentences_text)
-    }
-    sentences = {
-        index: tagged
-        for index, tagged in map(lambda text: text.split("\t"), sentences_text)
-    }
+    tagged_sentences = {index: tagged for index, tagged in map(lambda text: text.split("\t"), tagged_sentences_text)}
+    sentences = {index: tagged for index, tagged in map(lambda text: text.split("\t"), sentences_text)}
 
     new_tagged_sentences_text = dict()
     new_sentences_text = dict()
@@ -109,9 +105,7 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
         shutil.rmtree(output_dir)
     os.makedirs(output_dir)
 
-    for sentence_id in tqdm(
-        sorted(new_tagged_sentences_text.keys()), f"Saving data to {output_dir}"
-    ):
+    for sentence_id in tqdm(sorted(new_tagged_sentences_text.keys()), f"Saving data to {output_dir}"):
         id_ = sentence_id.split(".")
         doc_id = ".".join(id_[:-1])
 

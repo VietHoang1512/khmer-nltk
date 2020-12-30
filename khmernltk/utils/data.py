@@ -1,4 +1,5 @@
 import re
+
 from khmernltk.utils.constants import *
 
 
@@ -60,22 +61,13 @@ def seg_kcc(str_sentence: str):
     segs = []
     cur = ""
     sentence = str_sentence
-    # for phr in str_sentence.split(): #no longer split by space, use 200b
-    #    logger.warning("phr: '", phr,"'")
     for word in sentence.split(SEPARATOR):
-        # logger.warning("PHR:[%s] len:%d" %(phr, len(phr)))
         for i, c in enumerate(word):
-            # logger.warning(i," c:", c)
             cur += c
             nextchar = word[i + 1] if (i + 1 < len(word)) else ""
 
             # cluster non-khmer chars together
-            if (
-                not is_khmer_char(c)
-                and nextchar != " "
-                and nextchar != ""
-                and not is_khmer_char(nextchar)
-            ):
+            if not is_khmer_char(c) and nextchar != " " and nextchar != "" and not is_khmer_char(nextchar):
                 continue
             # cluster number together
             if c in KHNUMBER and nextchar in KHNUMBER:

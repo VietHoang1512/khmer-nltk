@@ -1,5 +1,3 @@
-from khmernltk.utils.log_utils import logger
-
 SEPARATOR = "\u200b"
 
 # list of constants needed for KCC and feature generation

@@ -1,8 +1,8 @@
 import argparse
+
 from tqdm import tqdm
 
-from khmernltk import word_tokenize, sentence_tokenize, pos_tag
-
+from khmernltk import pos_tag, sentence_tokenize, word_tokenize
 
 funtionalities = ["sentence_tokenize", "word_tokenize", "pos_tagging"]
 
@@ -24,9 +24,7 @@ parser.add_argument(
     help="path to the expected tokenized output file",
 )
 
-parser.add_argument(
-    "-f", "--function", type=str, help="Select functionality in list {funtionalities} "
-)
+parser.add_argument("-f", "--function", type=str, help="Select functionality in list {funtionalities} ")
 
 
 args = parser.parse_args()
@@ -44,9 +42,7 @@ if __name__ == "__main__":
     elif args.function == "pos_tag":
         function = pos_tag
     else:
-        raise Exception(
-            f"Not Implemented Error. Function can only be in {funtionalities}."
-        )
+        raise Exception(f"Not Implemented Error. Function can only be in {funtionalities}.")
 
     total = len(sentences)
     outputs = []

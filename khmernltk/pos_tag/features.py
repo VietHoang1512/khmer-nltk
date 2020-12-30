@@ -24,7 +24,7 @@ def word_to_features(sent, i):
             {
                 "-1:word.isdigit()": word1.isdigit(),
                 "-1:word": word1,
-                "-1len(kccs)": len(kccs),
+                "-1len(kccs)": len(kccs1),
             }
         )
         for k in range(len(kccs1)):
@@ -39,7 +39,7 @@ def word_to_features(sent, i):
             {
                 "+1:word.isdigit()": word1.isdigit(),
                 "+1:word": word1,
-                "+1len(kccs)": len(kccs),
+                "+1len(kccs)": len(kccs1),
             }
         )
         for k in range(len(kccs1)):

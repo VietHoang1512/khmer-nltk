@@ -1,4 +1,3 @@
-import pathlib
 import setuptools
 
 with open("README.md", "r") as f:
@@ -9,7 +8,7 @@ with open("requirements.txt", "r") as f:
 
 setuptools.setup(
     name="khmer-nltk",
-    version="1.1",
+    version="1.2",
     description="A Khmer language processing toolkit",
     long_description=long_description,
     long_description_content_type="text/markdown",

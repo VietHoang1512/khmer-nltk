@@ -1,10 +1,10 @@
 import os
 
+from khmernltk import word_tokenize
+from khmernltk.pos_tag.features import create_word_features
 from khmernltk.utils.constants import *
 from khmernltk.utils.data import *
-from khmernltk.pos_tag.features import create_word_features
 from khmernltk.utils.file_utils import load_model
-from khmernltk import word_tokenize
 
 # sklearn_crf_pos_alt_0.9849.sav
 model_path = os.path.join(os.path.dirname(__file__), "sklearn_crf_pos_alt_0.9849.sav")
@@ -20,7 +20,7 @@ def pos_tag(text: str):
     :return: (list) List of tuple (token, pos tag)
     """
     text = cleanup_str(text)
-    tokens = word_tokenize(text, return_tokens=True)
+    tokens = word_tokenize.word_tokenize(text, return_tokens=True)
     features = create_word_features(tokens)
     pred = crf_model.predict([features])[0]
     return list(zip(tokens, pred))

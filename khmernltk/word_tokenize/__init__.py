@@ -2,9 +2,8 @@ import os
 
 from khmernltk.utils.constants import *
 from khmernltk.utils.data import *
-from khmernltk.word_tokenize.features import create_kcc_features
 from khmernltk.utils.file_utils import load_model
-
+from khmernltk.word_tokenize.features import create_kcc_features
 
 # sklearn_crf_ner_alt_0.9725.sav / sklearn_crf_ner_10000.sav
 model_path = os.path.join(os.path.dirname(__file__), "sklearn_crf_ner_10000.sav")
@@ -51,6 +50,8 @@ def word_tokenize(text: str, separator: str = "-", return_tokens: bool = True):
 
 if __name__ == "__main__":
     text = "កប់! មួយជាតិការម្ដង Bitoey លេងឈុតស៊ិចស៊ីឡើងរាំជាមួយស្វាមីមុខភ្ញៀវជាច្រើន!(មានវីដេអូ)"
-    correct = "​កប់​! ​មួយ​ជាតិ​ការ​ម្ដង​ Bitoey ​លេង​ឈុត​ស៊ិចស៊ី​ឡើង​រាំ​ជាមួយ​ស្វាមី​មុខ​ភ្ញៀវ​ជាច្រើន​!​(​មាន​វីដេអូ​)"
+    correct = (
+        "​កប់​! ​មួយ​ជាតិ​ការ​ម្ដង​ Bitoey ​លេង​ឈុត​ស៊ិចស៊ី​ឡើង​រាំ​ជាមួយ​ស្វាមី​មុខ​ភ្ញៀវ​ជាច្រើន​!​(​មាន​វីដេអូ​)"
+    )
     print(word_tokenize(text))
     print(correct.replace(SEPARATOR, separator))

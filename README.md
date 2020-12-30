@@ -1,20 +1,25 @@
 ## 🏅Khmer natural language processing toolkit🏅
 
-### 💪 TODO:
+![pypi](https://img.shields.io/pypi/v/khmer-nltk.svg)
+![versions](https://img.shields.io/pypi/pyversions/khmer-nltk.svg)
+[![Downloads](https://pepy.tech/badge/khmer-nltk)](https://pepy.tech/project/khmer-nltk)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/VietHoang1710/khmer-nltk/blob/main/LICENSE)
 
-* [X] Sentence Segmentation
-* [X] Word Segmentation
-* [ ] Named Entity Recognition
-* [X] Part of speech Tagging
-* [ ] Text classification
+### 🎯TODO
 
-### 🎯 Installation
+*   [X] Sentence Segmentation
+*   [X] Word Segmentation
+*   [ ] Named Entity Recognition
+*   [X] Part of speech Tagging
+*   [ ] Text classification
+
+### 💪Installation
 
 ```bash
 $ pip install khmer-nltk
 ```
 
-### 🏹 Quick tour:
+### 🏹 Quick tour
 
 To get the evaluation result of khmer-nltk's functionalities, please refer the sub-modules's readme
 
@@ -27,7 +32,7 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 ['ខួបឆ្នាំទី២៨!', '២៣ តុលា ស្មារតីផ្សះផ្សាជាតិរវាងខ្មែរនិងខ្មែរ ឈានទៅបញ្ចប់សង្រ្គាម នាំពន្លឺសន្តិភាព និងការរួបរួមជាថ្មី']
 ```
 
-#### [Word tokenization](https://github.com/VietHoang1710/khmer-nltk/tree/main/khmernltk/word_tokenize):
+#### [Word tokenization](https://github.com/VietHoang1710/khmer-nltk/tree/main/khmernltk/word_tokenize)
 
 ```python
 >>> from khmernltk import word_tokenize
@@ -36,9 +41,9 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 ['ខួប', 'ឆ្នាំ', 'ទី', '២៨', '!', ' ', '២៣', ' ', 'តុលា', ' ', 'ស្មារតី', 'ផ្សះផ្សា', 'ជាតិ', 'រវាង', 'ខ្មែរ', 'និង', 'ខ្មែរ', ' ', 'ឈាន', 'ទៅ', 'បញ្ចប់', 'សង្រ្គាម', ' ', 'នាំ', 'ពន្លឺ', 'សន្តិភាព', ' ', 'និង', 'ការរួបរួម', 'ជាថ្មី']
 ```
 
-#### [POS Tagging](https://github.com/VietHoang1710/khmer-nltk/tree/main/khmernltk/pos_tag):
+#### [POS Tagging](https://github.com/VietHoang1710/khmer-nltk/tree/main/khmernltk/pos_tag)
 
-#### Usage:
+#### Usage
 
 ```python
 >>> from khmernltk import pos_tag
@@ -60,9 +65,7 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 }
 ```
 
-### 👨‍🎓 References:
+### 👨‍🎓 References
 
-- [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
-- [Khmer Word Segmentation Using
-  Conditional Random Fields](https://www2.nict.go.jp/astrec-att/member/ding/KhNLP2015-SEG.pdf)
-- [Underthesea](https://github.com/undertheseanlp/underthesea)
+*   [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
+*   [Khmer Word Segmentation Using Conditional Random Fields](https://www2.nict.go.jp/astrec-att/member/ding/KhNLP2015-SEG.pdf)

@@ -1,13 +1,15 @@
 ### Evaluation
 
-- [Asian Language Treebank (ALT)](https://www2.nict.go.jp/astrec-att/member/mutiyama/ALT/)
+*   [Asian Language Treebank (ALT)](https://www2.nict.go.jp/astrec-att/member/mutiyama/ALT/)
 
 ```text
 Iter 100 time=0.47  loss=27934.73 active=15102 precision=0.825  recall=0.818  F1=0.821  Acc(item/seq)=0.983 0.659  feature_norm=168.99
 ================================================
 Label      Precision    Recall     F1    Support
 -------  -----------  --------  -----  ---------
-+              0.000     0.000  0.000          2
+
+*              0.000     0.000  0.000          2
+
 .              1.000     0.999  1.000       6481
 1              0.885     0.847  0.866       1149
 a              0.925     0.912  0.919       6064
