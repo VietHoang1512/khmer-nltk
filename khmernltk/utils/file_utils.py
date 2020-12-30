@@ -39,7 +39,7 @@ def get_data_from_folder(data_dir: str, max_sentences=100000):
         f.close()
         orig_text.append(lines)
 
-    for i, text in enumerate(seg_text):
+    for text in seg_text:
         for sentence in text:
             sentences.append(cleanup_str(sentence))
 
@@ -68,7 +68,7 @@ def cache_nova_text(tok_fp, tag_fp, output_dir):
     new_tagged_sentences_text = dict()
     new_sentences_text = dict()
 
-    for sentence_id, sentence in tqdm(tagged_sentences.items(), desc="Processing data"):
+    for sentence_id in tqdm(tagged_sentences.keys(), desc="Processing data"):
         new_sentence = ""
         new_tokens = []
         start_of_token = False

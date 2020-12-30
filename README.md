@@ -7,11 +7,11 @@
 
 ### 🎯TODO
 
-*   [X] Sentence Segmentation
-*   [X] Word Segmentation
-*   [ ] Named Entity Recognition
-*   [X] Part of speech Tagging
-*   [ ] Text classification
+- [X] Sentence Segmentation
+- [X] Word Segmentation
+- [ ] Named Entity Recognition
+- [X] Part of speech Tagging
+- [ ] Text classification
 
 ### 💪Installation
 
@@ -23,7 +23,7 @@ $ pip install khmer-nltk
 
 To get the evaluation result of khmer-nltk's functionalities, please refer the sub-modules's readme
 
-#### Sentence tokenization:
+#### Sentence tokenization
 
 ```python
 >>> from khmernltk import sentence_tokenize
@@ -67,5 +67,5 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 
 ### 👨‍🎓 References
 
-*   [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
-*   [Khmer Word Segmentation Using Conditional Random Fields](https://www2.nict.go.jp/astrec-att/member/ding/KhNLP2015-SEG.pdf)
+* [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
+* [Khmer Word Segmentation Using Conditional Random Fields](https://www2.nict.go.jp/astrec-att/member/ding/KhNLP2015-SEG.pdf)

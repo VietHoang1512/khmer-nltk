@@ -2,18 +2,18 @@ from khmernltk.utils.constants import *
 from khmernltk.utils.data import *
 
 
-def get_type(chr: str):
-    if chr.lower() in EN:
+def get_type(char: str):
+    if char.lower() in EN:
         return NS
-    if chr in KHCONST:
+    if char in KHCONST:
         return "C"
-    if chr in KHVOWEL:
+    if char in KHVOWEL:
         return "W"
-    if chr in KHNUMBER:
+    if char in KHNUMBER:
         return NS
-    if chr in KHSUB:
+    if char in KHSUB:
         return "S"
-    if chr in KHDIAC:
+    if char in KHDIAC:
         return "D"
     return NS
 

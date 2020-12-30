@@ -1,7 +1,6 @@
 import re
 
 from khmernltk.sentence_tokenize.features import SENTENCE_SEPARATOR
-from khmernltk.utils.constants import *
 
 
 def sentence_tokenize(text: str):
