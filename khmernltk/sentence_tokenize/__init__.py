@@ -1,6 +1,7 @@
 import re
 
 from khmernltk.sentence_tokenize.features import SENTENCE_SEPARATOR
+from khmernltk.utils.constants import *
 
 
 def sentence_tokenize(text: str):
@@ -11,11 +12,11 @@ def sentence_tokenize(text: str):
     ====================================
     :return: (list) List of sentences
     """
-    sentences = re.split(r"(?<=[" + "".join(SENTENCE_SEPARATOR) + "])\s*", text)
+    sentences = re.split("(?<=[" + "".join(SENTENCE_SEPARATOR) + "])\s*", text)
     return sentences
 
 
 if __name__ == "__main__":
-    text = "ខេត្តកំពង់ធំ ៖ ឪពុកនិង​កូន​ប្រុស​នាំគ្នា​យកម៉ូទ័រ​​ទៅ​ ។"
+    text = "ខួបឆ្នាំទី២៨! ២៣ តុលា ស្មារតីផ្សះផ្សាជាតិរវាងខ្មែរនិងខ្មែរ ឈានទៅបញ្ចប់សង្រ្គាម នាំពន្លឺសន្តិភាព និងការរួបរួមជាថ្មី"
     print(len(sentence_tokenize(text)))
     print(sentence_tokenize(text))
