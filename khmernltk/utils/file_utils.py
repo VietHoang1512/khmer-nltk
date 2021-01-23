@@ -148,10 +148,11 @@ def load_model(fp):
 
 
 if __name__ == "__main__":
+    pass
     # get_data_from_folder(
     #     "data/kh_data_10000")
-    cache_nova_text(
-        tok_fp="data/km-nova-181101/data_km.km-tok.nova",
-        tag_fp="data/km-nova-181101/data_km.km-tag.nova",
-        output_dir="data/new-km-nova-181101",
-    )
+    # cache_nova_text(
+    #     tok_fp="data/km-nova-181101/data_km.km-tok.nova",
+    #     tag_fp="data/km-nova-181101/data_km.km-tag.nova",
+    #     output_dir="data/new-km-nova-181101",
+    # )

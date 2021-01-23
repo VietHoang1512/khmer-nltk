@@ -8,7 +8,7 @@ with open("requirements.txt", "r") as f:
 
 setuptools.setup(
     name="khmer-nltk",
-    version="1.2",
+    version="1.3",
     description="A Khmer language processing toolkit",
     long_description=long_description,
     long_description_content_type="text/markdown",

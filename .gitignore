@@ -6,6 +6,7 @@
 **/data
 **/outputs
 **/tokenized_data
+khmernltk/word_tokenize/sklearn_crf_ner_alt_0.9725.sav
 
 # stuff
 .flake8

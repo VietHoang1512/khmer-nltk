@@ -12,10 +12,13 @@ def sentence_tokenize(text: str):
     :return: (list) List of sentences
     """
     sentences = re.split("(?<=[" + "".join(SENTENCE_SEPARATOR) + "])\s*", text)
-    return sentences
+    if sentences[-1]:
+        return sentences
+    return sentences[:-1]
 
 
 if __name__ == "__main__":
-    text = "ខួបឆ្នាំទី២៨! ២៣ តុលា ស្មារតីផ្សះផ្សាជាតិរវាងខ្មែរនិងខ្មែរ ឈានទៅបញ្ចប់សង្រ្គាម នាំពន្លឺសន្តិភាព និងការរួបរួមជាថ្មី"
-    print(len(sentence_tokenize(text)))
-    print(sentence_tokenize(text))
+    pass
+    # text = "ខួបឆ្នាំទី២៨! ២៣ តុលា ស្មារតីផ្សះផ្សាជាតិរវាងខ្មែរនិងខ្មែរ ឈានទៅបញ្ចប់សង្រ្គាម នាំពន្លឺសន្តិភាព និងការរួបរួមជាថ្មី"
+    # print(len(sentence_tokenize(text)))
+    # print(sentence_tokenize(text))
