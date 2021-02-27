@@ -8,7 +8,7 @@ with open("requirements.txt", "r") as f:
 
 setuptools.setup(
     name="khmer-nltk",
-    version="1.3",
+    version="1.4",
     description="A Khmer language processing toolkit",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -27,7 +27,7 @@ setuptools.setup(
     package_dir={"khmernltk": "khmernltk"},
     package_data={
         "khmernltk": [
-            "pos_tag/sklearn_crf_pos_alt_0.9849.sav",
+            "pos_tag/sklearn_crf_pos_alt_0.9846.sav",
             "word_tokenize/sklearn_crf_ner_10000.sav",
             #   'word_tokenize/sklearn_crf_ner_alt_0.9725.sav'
         ]

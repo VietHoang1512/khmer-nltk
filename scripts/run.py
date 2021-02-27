@@ -24,7 +24,7 @@ parser.add_argument(
     help="path to the expected tokenized output file",
 )
 
-parser.add_argument("-f", "--function", type=str, help="Select functionality in list {funtionalities} ")
+parser.add_argument("-f", "--function", type=str, help=f"Select functionality in list {funtionalities} ")
 
 
 args = parser.parse_args()
@@ -34,7 +34,6 @@ if __name__ == "__main__":
     with open(args.input_file, "r") as f:
         sentences = f.read().strip().split("\n")
 
-    print("args.function", args.function)
     if args.function == "sentence_tokenize":
         function = sentence_tokenize
     elif args.function == "word_tokenize":

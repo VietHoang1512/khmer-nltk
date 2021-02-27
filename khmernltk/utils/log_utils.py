@@ -126,13 +126,18 @@ class BraceFormatStyleFormatter(logging.Formatter):
         return formatted
 
 
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
+def custom_logger(name="khmer-nltk"):
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.DEBUG)
 
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.DEBUG)
-console_format = "%(asctime)s - %(levelname)-8s - %(name)-25s - %(message)s"
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)
+    console_format = "| %(asctime)s | %(levelname)s | %(name)s | %(message)s |"
 
-colored_formatter = ColorizedArgsFormatter(console_format)
-console_handler.setFormatter(colored_formatter)
-logger.addHandler(console_handler)
+    colored_formatter = ColorizedArgsFormatter(console_format)
+    console_handler.setFormatter(colored_formatter)
+    logger.addHandler(console_handler)
+    return logger
+
+
+logger = custom_logger()
