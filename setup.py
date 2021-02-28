@@ -6,6 +6,13 @@ with open("README.md", "r") as f:
 with open("requirements.txt", "r") as f:
     requirements = f.read().strip().split("\n")
 
+extras_requirements = {
+    "dev": [
+        "pytest",
+        "coverage",
+    ],
+}
+
 setuptools.setup(
     name="khmer-nltk",
     version="1.4",
@@ -34,4 +41,5 @@ setuptools.setup(
     },
     include_package_data=True,
     install_requires=requirements,
+    extras_require=extras_requirements,
 )

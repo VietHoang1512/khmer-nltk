@@ -1,3 +1,5 @@
+import pytest
+
 from khmernltk import pos_tag, sentence_tokenize, word_tokenize
 
 text = (
