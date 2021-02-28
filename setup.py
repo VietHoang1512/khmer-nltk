@@ -15,7 +15,7 @@ extras_requirements = {
 
 setuptools.setup(
     name="khmer-nltk",
-    version="1.4",
+    version="1.5",
     description="A Khmer language processing toolkit",
     long_description=long_description,
     long_description_content_type="text/markdown",
