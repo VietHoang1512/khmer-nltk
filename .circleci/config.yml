@@ -9,7 +9,7 @@ executors:
   docker-executor:
     docker:
       - image: circleci/python:3.7
-    resource_class: large
+    resource_class: main
 
 commands:
   setup_environment:
