@@ -7,7 +7,7 @@ with open("requirements.txt", "r") as f:
     requirements = f.read().strip().split("\n")
 
 extras_requirements = {
-    "dev": [
+    "test": [
         "pytest",
         "coverage",
     ],
