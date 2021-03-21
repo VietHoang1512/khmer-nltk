@@ -3,8 +3,9 @@
 # 🏅Khmer natural language processing toolkit🏅
 
 [![circleci](https://circleci.com/gh/VietHoang1710/khmer-nltk/tree/main.svg?style=svg)](https://circleci.com/gh/VietHoang1710/khmer-nltk/tree/main)
-[![code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/6f6e871a122a4aa18e87ec8c75e408e2)](https://www.codacy.com/gh/VietHoang1710/khmer-nltk/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=VietHoang1710/khmer-nltk&amp;utm_campaign=Badge_Grade)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![release](https://img.shields.io/pypi/v/khmer-nltk.svg)](https://pypi.org/project/khmer-nltk/)
 ![versions](https://img.shields.io/pypi/pyversions/khmer-nltk.svg)
 [![fownloads](https://pepy.tech/badge/khmer-nltk)](https://pepy.tech/project/khmer-nltk)
