@@ -1,6 +1,8 @@
 # experiments
 *.ipynb
 *train*.py
+node_modules/
+*.json
 
 # data
 **/data

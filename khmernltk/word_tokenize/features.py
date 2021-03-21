@@ -1,21 +1,20 @@
-from khmernltk.utils.constants import *
-from khmernltk.utils.data import *
+from khmernltk.utils import constants
 
 
 def get_type(char: str):
-    if char.lower() in EN:
-        return NS
-    if char in KHCONST:
+    if char.lower() in constants.EN:
+        return constants.NS
+    if char in constants.KHCONST:
         return "C"
-    if char in KHVOWEL:
+    if char in constants.KHVOWEL:
         return "W"
-    if char in KHNUMBER:
-        return NS
-    if char in KHSUB:
+    if char in constants.KHNUMBER:
+        return constants.NS
+    if char in constants.KHSUB:
         return "S"
-    if char in KHDIAC:
+    if char in constants.KHDIAC:
         return "D"
-    return NS
+    return constants.NS
 
 
 # non-khmer character that we should not separate like number
@@ -23,7 +22,7 @@ def get_type(char: str):
 
 
 def is_no_space(k):
-    if get_type(k[0]) == NS:
+    if get_type(k[0]) == constants.NS:
         return True
     return False
 

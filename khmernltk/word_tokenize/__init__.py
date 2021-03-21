@@ -1,7 +1,8 @@
 import os
+from typing import List, Union
 
-from khmernltk.utils.constants import *
-from khmernltk.utils.data import *
+from khmernltk.utils import constants
+from khmernltk.utils.data import cleanup_str, seg_kcc
 from khmernltk.utils.file_utils import load_model
 from khmernltk.word_tokenize.features import create_kcc_features
 
@@ -10,18 +11,16 @@ model_path = os.path.join(os.path.dirname(__file__), "sklearn_crf_ner_10000.sav"
 crf_model = load_model(model_path)
 
 
-def word_tokenize(text: str, separator: str = "-", return_tokens: bool = True):
-    """
-    Khmer language word tokenization
-    ================================
-    :param text: (str) Raw text
-    :param separator: (str) Token-separator in case return_tokens=True
-    :param return_tokens: (bool) Whether return a tokenized text or a list of tokens
-    ================================
-    if return_tokens is True
-    :return: (list) Tokens
-    or else
-    :return: (str) Tokenized text, separated by the separator
+def word_tokenize(text: str, separator: str = "-", return_tokens: bool = True) -> Union[List, str]:
+    """Khmer language word tokenization
+
+    Args:
+        text(str): Raw text
+        separator(str, optional): Token - separator in case return_tokens = True. Defaults to "-".
+        return_tokens(bool, optional): Whether return a tokenized text or a list of tokens. Defaults to True.
+
+    Returns:
+        Union[List, str]: Tokens or tokenized text, separated by the separator
     """
     text = cleanup_str(text)
     skcc = seg_kcc(text)
@@ -46,12 +45,3 @@ def word_tokenize(text: str, separator: str = "-", return_tokens: bool = True):
     complete = complete.replace(separator + " " + separator, " ")
 
     return complete
-
-
-if __name__ == "__main__":
-    text = "កប់! មួយជាតិការម្ដង Bitoey លេងឈុតស៊ិចស៊ីឡើងរាំជាមួយស្វាមីមុខភ្ញៀវជាច្រើន!(មានវីដេអូ)"
-    correct = (
-        "​កប់​! ​មួយ​ជាតិ​ការ​ម្ដង​ Bitoey ​លេង​ឈុត​ស៊ិចស៊ី​ឡើង​រាំ​ជាមួយ​ស្វាមី​មុខ​ភ្ញៀវ​ជាច្រើន​!​(​មាន​វីដេអូ​)"
-    )
-    print(word_tokenize(text))
-    print(correct.replace(SEPARATOR, separator))

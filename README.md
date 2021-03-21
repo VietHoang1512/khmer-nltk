@@ -1,4 +1,3 @@
-
 <div align="center">
 
 # 🏅Khmer natural language processing toolkit🏅
@@ -13,25 +12,24 @@
 
 </div>
 
-### 🎯TODO
+## 🎯TODO
+  - [x] Sentence Segmentation
+  - [x] Word Segmentation
+  - [x] Part of speech Tagging
+  - [ ] Named Entity Recognition
+  - [ ] Text classification
 
-- [X] Sentence Segmentation
-- [X] Word Segmentation
-- [X] Part of speech Tagging
-- [ ] Named Entity Recognition
-- [ ] Text classification
-
-### 💪Installation
+## 💪Installation
 
 ```bash
-$ pip install khmer-nltk
+pip install khmer-nltk
 ```
 
-### 🏹 Quick tour
+## 🏹 Quick tour
 
 To get the evaluation result of khmer-nltk's functionalities, please refer the sub-modules's readme
 
-#### Sentence tokenization
+### Sentence tokenization
 
 ```python
 >>> from khmernltk import sentence_tokenize
@@ -40,7 +38,7 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 ['ខួបឆ្នាំទី២៨!', '២៣ តុលា ស្មារតីផ្សះផ្សាជាតិរវាងខ្មែរនិងខ្មែរ ឈានទៅបញ្ចប់សង្រ្គាម នាំពន្លឺសន្តិភាព និងការរួបរួមជាថ្មី']
 ```
 
-#### [Word tokenization](khmernltk/word_tokenize)
+### [Word tokenization](khmernltk/word_tokenize)
 
 ```python
 >>> from khmernltk import word_tokenize
@@ -49,9 +47,9 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 ['ខួប', 'ឆ្នាំ', 'ទី', '២៨', '!', ' ', '២៣', ' ', 'តុលា', ' ', 'ស្មារតី', 'ផ្សះផ្សា', 'ជាតិ', 'រវាង', 'ខ្មែរ', 'និង', 'ខ្មែរ', ' ', 'ឈាន', 'ទៅ', 'បញ្ចប់', 'សង្រ្គាម', ' ', 'នាំ', 'ពន្លឺ', 'សន្តិភាព', ' ', 'និង', 'ការរួបរួម', 'ជាថ្មី']
 ```
 
-#### [POS Tagging](khmernltk/pos_tag)
+### [POS Tagging](khmernltk/pos_tag)
 
-#### Usage
+### Usage
 
 ```python
 >>> from khmernltk import pos_tag

@@ -1,16 +1,16 @@
 import re
 
-from khmernltk.utils.constants import *
+from khmernltk.utils import constants
 
 
 def correct_text(text: str):
-    for token, normalized_token in mistokenized_dict.items():
+    for token, normalized_token in constants.mistokenized_dict.items():
         text = text.replace(token, normalized_token)
     return text
 
 
 def cleanup_str(text: str):
-    text = text.strip(SEPARATOR).strip()
+    text = text.strip(constants.SEPARATOR).strip()
     text = text.replace("  ", " ")  # clean up 2 spaces to 1
     text = text.replace(" ", "\u200b \u200b")  # ensure 200b around space
     # clean up
@@ -33,22 +33,22 @@ def post_process(text, separator):
 def is_khmer_char(ch: str):
     if (ch >= "\u1780") and (ch <= "\u17ff"):
         return True
-    if ch in KHSYM:
+    if ch in constants.KHSYM:
         return True
-    if ch in KHLUNAR:
+    if ch in constants.KHLUNAR:
         return True
     return False
 
 
 def is_start_of_kcc(ch: str):
     if is_khmer_char(ch):
-        if ch in KHCONST:
+        if ch in constants.KHCONST:
             return True
-        if ch in KHSYM:
+        if ch in constants.KHSYM:
             return True
-        if ch in KHNUMBER:
+        if ch in constants.KHNUMBER:
             return True
-        if ch in KHLUNAR:
+        if ch in constants.KHLUNAR:
             return True
         return False
     return True
@@ -61,7 +61,7 @@ def seg_kcc(str_sentence: str):
     segs = []
     cur = ""
     sentence = str_sentence
-    for word in sentence.split(SEPARATOR):
+    for word in sentence.split(constants.SEPARATOR):
         for i, c in enumerate(word):
             cur += c
             nextchar = word[i + 1] if (i + 1 < len(word)) else ""
@@ -70,7 +70,7 @@ def seg_kcc(str_sentence: str):
             if not is_khmer_char(c) and nextchar != " " and nextchar != "" and not is_khmer_char(nextchar):
                 continue
             # cluster number together
-            if c in KHNUMBER and nextchar in KHNUMBER:
+            if c in constants.KHNUMBER and nextchar in constants.KHNUMBER:
                 continue
 
             # cluster non-khmer together
@@ -78,7 +78,7 @@ def seg_kcc(str_sentence: str):
             if not is_khmer_char(c) or nextchar == " " or nextchar == "":
                 segs.append(cur)
                 cur = ""
-            elif is_start_of_kcc(nextchar) and not (c in KHSUB):
+            elif is_start_of_kcc(nextchar) and not (c in constants.KHSUB):
                 segs.append(cur)
                 cur = ""
         # add space back after split

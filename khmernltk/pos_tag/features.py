@@ -1,5 +1,4 @@
-from khmernltk.utils.constants import *
-from khmernltk.utils.data import *
+from khmernltk.utils.data import seg_kcc
 
 
 def word_to_features(sent, i):
