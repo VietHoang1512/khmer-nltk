@@ -75,7 +75,10 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
   howpublished = {\url{https://github.com/VietHoang1512/khmer-nltk}}
 }
 ```
-
+#### Used in:
+ - [Pretrained Models and Evaluation Data for the Khmer Language](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9645441)
+ - [Multilingual Open Text 1.0: Public Domain News in 44 Languages](https://arxiv.org/pdf/2201.05609.pdf)
+ 
 ### 👨‍🎓 References
 
 - [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
