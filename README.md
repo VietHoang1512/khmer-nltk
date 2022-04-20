@@ -9,7 +9,7 @@
 [![release](https://img.shields.io/pypi/v/khmer-nltk.svg)](https://pypi.org/project/khmer-nltk/)
 ![versions](https://img.shields.io/pypi/pyversions/khmer-nltk.svg)
 [![fownloads](https://pepy.tech/badge/khmer-nltk)](https://pepy.tech/project/khmer-nltk)
-[![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/VietHoang1512/khmer-nltk/blob/main/LICENSE)
+[![DOI](https://zenodo.org/badge/313328421.svg)](https://zenodo.org/badge/latestdoi/313328421)
 
 </div>
 
@@ -83,6 +83,7 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 
 - [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
 - [Khmer Word Segmentation Using Conditional Random Fields](https://www2.nict.go.jp/astrec-att/member/ding/KhNLP2015-SEG.pdf)
+- [Shared Task on Cross-lingual Open-Retrieval QA](https://www.aclweb.org/portal/content/shared-task-cross-lingual-open-retrieval-qa)
 
 ### 🪶 Advisor
 
