@@ -30,7 +30,6 @@ pip install khmer-nltk
 ## 🏹 Quick tour
 
 [[Blog]](https://towardsdatascience.com/khmer-natural-language-processing-in-python-c770afb84784)
-[[Paper]](https://www2.nict.go.jp/astrec-att/member/ding/KhNLP2015-SEG.pdf)
 
 To get the evaluation result of khmer-nltk's functionalities, please refer the sub-modules's readme
 
@@ -76,15 +75,18 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 }
 ```
 #### Used in:
- - [Pretrained Models and Evaluation Data for the Khmer Language](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9645441)
- - [Multilingual Open Text 1.0: Public Domain News in 44 Languages](https://arxiv.org/pdf/2201.05609.pdf)
+- [LASER Language-Agnostic SEntence Representations](https://github.com/facebookresearch/LASER)
+- [Pretrained Models and Evaluation Data for the Khmer Language](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9645441)
+- [Multilingual Open Text 1.0: Public Domain News in 44 Languages](https://arxiv.org/pdf/2201.05609.pdf)
+- [Shared Task on Cross-lingual Open-Retrieval QA](https://www.aclweb.org/portal/content/shared-task-cross-lingual-open-retrieval-qa)
+
  
 ### 👨‍🎓 References
 
 - [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
 - [Khmer Word Segmentation Using Conditional Random Fields](https://www2.nict.go.jp/astrec-att/member/ding/KhNLP2015-SEG.pdf)
-- [Shared Task on Cross-lingual Open-Retrieval QA](https://www.aclweb.org/portal/content/shared-task-cross-lingual-open-retrieval-qa)
 
-### 🪶 Advisor
+
+### 📜 Advisor
 
 - Ass. Prof. [Huong Le Thanh](https://users.soict.hust.edu.vn/huonglt/)
