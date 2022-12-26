@@ -91,4 +91,4 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 
 ### 📜 Advisor
 
-- Ass. Prof. [Huong Le Thanh](https://users.soict.hust.edu.vn/huonglt/)
+- Prof. [Huong Le Thanh](https://users.soict.hust.edu.vn/huonglt/)
