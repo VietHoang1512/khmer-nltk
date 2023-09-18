@@ -8,7 +8,7 @@ from khmernltk.word_tokenize.features import create_kcc_features
 
 # sklearn_crf_ner_alt_0.9725.sav / sklearn_crf_ner_10000.sav
 model_path = os.path.join(os.path.dirname(__file__), "sklearn_crf_ner_10000.sav")
-crf_model = load_model(model_path)
+crf_model = None
 
 
 def word_tokenize(text: str, separator: str = "-", return_tokens: bool = True) -> Union[List, str]:
@@ -22,6 +22,10 @@ def word_tokenize(text: str, separator: str = "-", return_tokens: bool = True) -
     Returns:
         Union[List, str]: Tokens or tokenized text, separated by the separator
     """
+    global crf_model
+    if crf_model is None:
+        crf_model = load_model(model_path)
+
     text = cleanup_str(text)
     skcc = seg_kcc(text)
 
