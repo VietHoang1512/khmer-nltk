@@ -3,8 +3,7 @@ import setuptools
 with open("README.md", "r") as f:
     long_description = f.read()
 
-with open("requirements.txt", "r") as f:
-    requirements = f.read().strip().split("\n")
+requirements = ["sklearn-crfsuite", "tqdm"]
 
 extras_requirements = {
     "test": [
@@ -15,7 +14,7 @@ extras_requirements = {
 
 setuptools.setup(
     name="khmer-nltk",
-    version="1.5",
+    version="1.6",
     description="A Khmer language processing toolkit",
     long_description=long_description,
     long_description_content_type="text/markdown",

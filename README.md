@@ -82,12 +82,13 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 - [ZusammenQA: Data Augmentation with Specialized Models for Cross-lingual Open-retrieval Question Answering System](https://arxiv.org/pdf/2205.14981.pdf)
 - [Shared Task on Cross-lingual Open-Retrieval QA](https://www.aclweb.org/portal/content/shared-task-cross-lingual-open-retrieval-qa)
 - [No Language Left Behind: Scaling Human-Centered Machine Translation](https://research.facebook.com/publications/no-language-left-behind/)
- 
+- [Wordless](https://github.com/BLKSerene/Wordless)
+
 ### 👨‍🎓 References
 
 - [NLP: Text Segmentation Using Conditional Random Fields](https://medium.com/@phylypo/nlp-text-segmentation-using-conditional-random-fields-e8ff1d2b6060)
 - [Khmer Word Segmentation Using Conditional Random Fields](https://www2.nict.go.jp/astrec-att/member/ding/KhNLP2015-SEG.pdf)
-
+- [Word Segmentation of Khmer Text Using Conditional Random Fields](https://medium.com/@phylypo/segmentation-of-khmer-text-using-conditional-random-fields-3a2d4d73956a)
 
 ### 📜 Advisor
 
