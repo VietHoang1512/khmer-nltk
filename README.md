@@ -83,6 +83,7 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 - [Shared Task on Cross-lingual Open-Retrieval QA](https://www.aclweb.org/portal/content/shared-task-cross-lingual-open-retrieval-qa)
 - [No Language Left Behind: Scaling Human-Centered Machine Translation](https://research.facebook.com/publications/no-language-left-behind/)
 - [Wordless](https://github.com/BLKSerene/Wordless)
+- [A Simple and Fast Strategy for Handling Rare Words in Neural Machine Translation](https://aclanthology.org/2022.aacl-srw.6/)
 
 ### 👨‍🎓 References
 
