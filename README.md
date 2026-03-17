@@ -67,7 +67,7 @@ To get the evaluation result of khmer-nltk's functionalities, please refer the s
 ```bibtex
 @misc{hoang-khmer-nltk,
   author = {Phan Viet Hoang},
-  title = {Khmer Natural Language Processing Tookit},
+  title = {Khmer Natural Language Processing Toolkit},
   year = {2020},
   publisher = {GitHub},
   journal = {GitHub repository},
